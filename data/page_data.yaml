@@ -1,13 +1,15 @@
 basepage:
-    host: "http://www.51zxw.net"
+    host: "https://www.yunqueyi.com"
 login:
-    URI: "/login?redirect_url=http%3A%2F%2Fwww.51zxw.net%2F"
-    ele_login_but: "登录" # a
-    ele_name: "loginStr" # id
-    ele_password: "pwd" # id
-    ele_sub: '//*[@id="loginFrom"]/div/div[5]/button'
-    ele_err_msg: '//*[@id="loginFrom"]/div/div[7]/div'
-    ele_succeed_msg: "退出登录" # a
+    URI: "/"
+    ele_login_but: '//*[@id="login"]/li[1]/span' # xpath
+    ele_name: "mobile" # name
+    ele_password: '//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/input' # xpah
+    ele_sub: '//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[7]/button[1]' # xpah
+    ele_name_err_msg: '//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[1]/span[2]' # xpah
+    ele_pwd_err_msg: '//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/span[4]' # xpah
+    ele_succend_but: 'personalImgUrl' # id
+    ele_succeed_msg: "个人资料" # a
 zhuce:
     url: "http://127.0.0.1:8000/"
     zhuc: "注册"

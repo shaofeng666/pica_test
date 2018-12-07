@@ -1,10 +1,12 @@
 from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from util import log
 from config import root_path
+from time import sleep
 
 
 class CreateDriver():
@@ -24,7 +26,7 @@ class CreateDriver():
         elif brower == 'Safari' or brower == 'safari' or brower == 'sa' or brower == 'saf':
             deriver = webdriver.Safari()
         else:
-            raise NameError('只能输入firefox,Ie,Chrome,PhantomJS,Edge,Opera,Safari')
+            raise NameError("-CreateDriver()对象只能传入：firefox,Ie,Chrome,PhantomJS,Edge,Opera,Safari;请确认%s是否合法" % brower)
         self.driver = deriver
         self.logs = log.log_message("页面对象")
 
@@ -35,7 +37,7 @@ class CreateDriver():
             element = self.driver.find_element_by_name(dingwei)
         elif fangfa == "class":
             element = self.driver.find_element_by_class_name(dingwei)
-        elif fangfa == "link_text":
+        elif fangfa == "link_text" or fangfa == "a" or fangfa == "A":
             element = self.driver.find_element_by_link_text(dingwei)
         elif fangfa == "xpath":
             element = self.driver.find_element_by_xpath(dingwei)
@@ -44,7 +46,8 @@ class CreateDriver():
         elif fangfa == "css":
             element = self.driver.find_element_by_css_selector(dingwei)
         else:
-            raise NameError("Please enter the  elements,'id','name','class','link_text','xpath','css','tag'.")
+            raise NameError(
+                "-element()方法元素定位方式只包含：'id','name','class','link_text','xpath','css','tag';请确认%s是否合法" % fangfa)
         return element
 
     def elements(self, fangfa, dingwei):  # 组定位
@@ -63,24 +66,30 @@ class CreateDriver():
         elif fangfa == "css":
             element = self.driver.find_elements_by_css_selector(dingwei)
         else:
-            raise NameError("Please enter the  elements,'id','name','class','link_text','xpath','css','tag'.")
+            raise NameError(
+                "-elements()组定位方式只包含:'id','name','class','link_text','xpath','css','tag';请确认%s是否合法" % fangfa)
         return element
 
-    def element_wait(self, fangfa, dingwei, wati=10):  # 等待
+    def element_wait(self, fangfa, dingwei, wati=15):  # 等待
         if fangfa == "id":
-            WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.ID, dingwei)))
+            element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.ID, dingwei)))
         elif fangfa == "name":
-            WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.NAME, dingwei)))
+            element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.NAME, dingwei)))
         elif fangfa == "class":
-            WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.CLASS_NAME, dingwei)))
-        elif fangfa == "link_text":
-            WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.LINK_TEXT, dingwei)))
+            element = WebDriverWait(self.driver, wati, 1).until(
+                EC.presence_of_element_located((By.CLASS_NAME, dingwei)))
+        elif fangfa == "link_text" or fangfa == "a" or fangfa == "A":
+            element = WebDriverWait(self.driver, wati, 1).until(
+                EC.presence_of_element_located((By.LINK_TEXT, dingwei)))
         elif fangfa == "xpath":
-            WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.XPATH, dingwei)))
+            element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.XPATH, dingwei)))
         elif fangfa == "css":
-            WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.CSS_SELECTOR, dingwei)))
+            element = WebDriverWait(self.driver, wati, 1).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, dingwei)))
         else:
-            raise NameError("Please enter the  elements,'id','name','class','link_text','xpath','css'.")
+            raise NameError(
+                "-element_wait()等待定位方式入参只包含：'id','name','class','link_text','xpath','css'.;请确认%s是否合法" % fangfa)
+        return element
 
     def open(self, url):  # 打开网页
         self.logs.logger.info('打开网页[%s]' % url)
@@ -91,66 +100,90 @@ class CreateDriver():
         self.driver.maximize_window()
 
     def set_winsize(self, wide, hight):  # 设置窗口
-        self.logs.logger.info('设置窗口尺寸宽[%s]高[%s]' % (wide, hight))
         self.driver.set_window_size(wide, hight)
+        self.logs.logger.info('设置窗口尺寸宽[%s]高[%s]' % (wide, hight))
 
     def send_key(self, fangfa, dingwei, text):  # 发送内容
-        self.logs.logger.info('在[%s]为[%s]的元素内输入[%s]' % (fangfa, dingwei, text))
-        # self.element(fangfa, dingwei)
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
-        e1.click()
-        e1.send_keys(text)
+        try:
+            e1 = self.element_wait(fangfa, dingwei)
+            e1.click()
+            e1.send_keys(text)
+            self.logs.logger.info('在[%s]为[%s]的元素内输入[%s]' % (fangfa, dingwei, text))
+        except TimeoutException as e:
+            self.logs.logger.error('send_key()方法执行失败，原因TimeoutException:%s' % e)
+        except Exception as e:
+            self.logs.logger.error('用例执行失败，原因：%s' % e)
 
     def clear_send_key(self, fangfa, dingwei, text):  # 清空并发送内容
-        # self.element(fangfa, dingwei)
-        self.logs.logger.info('点击[%s]为[%s]的元素清空内容，并输入[%s]' % (fangfa, dingwei, text))
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
-        e1.click()
-        e1.clear()
-        e1.send_keys(text)
+        try:
+            e1 = self.element_wait(fangfa, dingwei)
+            e1.click()
+            e1.clear()
+            e1.send_keys(text)
+            self.logs.logger.info('点击[%s]为[%s]的元素清空内容，并输入[%s]' % (fangfa, dingwei, text))
+        except TimeoutException as e:
+            self.logs.logger.error('clear_send_key()方法执行失败，原因TimeoutException:%s' % e)
+        except Exception as e:
+            self.logs.logger.error('用例执行失败，原因：%s' % e)
 
     def clear(self, fangfa, dingwei):  # 清空
-        self.logs.logger.info('点击[%s]为[%s]的元素并清空内容' % (fangfa, dingwei))
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
-        e1.click()
-        e1.clear()
+        try:
+            self.logs.logger.info('点击[%s]为[%s]的元素并清空内容' % (fangfa, dingwei))
+            e1 = self.element_wait(fangfa, dingwei)
+            e1.click()
+            e1.clear()
+        except TimeoutException as e:
+            self.logs.logger.error('clear()方法执行失败，原因TimeoutException:%s' % e)
+        except Exception as e:
+            self.logs.logger.error('用例执行失败，原因：%s' % e)
 
     def click(self, fangfa, dingwei):  # 单击
-        self.logs.logger.info('点击[%s]为[%s]的元素' % (fangfa, dingwei))
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
-        e1.click()
+        try:
+            e1 = self.element_wait(fangfa, dingwei)
+            e1.click()
+            self.logs.logger.info('点击[%s]为[%s]的元素' % (fangfa, dingwei))
+        except TimeoutException as e:
+            self.logs.logger.error('click()方法执行失败，原因TimeoutException:%s' % e)
+        except Exception as e:
+            self.logs.logger.error('用例执行失败，原因：%s' % e)
 
     def right_click(self, fangfa, dingwei):  # 右击
         self.logs.logger.info('右键点击[%s]为[%s]的元素' % (fangfa, dingwei))
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
+        e1 = self.element_wait(fangfa, dingwei)
         ActionChains(self.driver).context_click(e1).perform()
 
     def move_element(self, fangfa, dingwei):  # 移动到
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
-        ActionChains(self.driver).move_to_element(e1).perform()
+        try:
+            sleep(2)
+            self.logs.logger.info('进入move_element()方法')
+            e1 = self.element_wait(fangfa, dingwei)
+            ActionChains(self.driver).move_to_element(e1).perform()
+            self.logs.logger.info('鼠标移动到[%s]为[%s]的元素' % (fangfa, dingwei))
+        except TimeoutException as e:
+            try:
+                sleep(3)
+                self.logs.logger.info('鼠标移动到[%s]为[%s]的元素' % (fangfa, dingwei))
+                e1 = self.element_wait(fangfa, dingwei)
+                ActionChains(self.driver).move_to_element(e1).perform()
+            except TimeoutException as e:
+                self.logs.logger.error('move_element()方法执行失败，原因TimeoutException:%s' % e)
+        except Exception as e:
+            self.logs.logger.error('用例执行失败，原因：%s' % e)
 
     def double_click(self, dingwei, fangfa):  # 双击
         self.logs.logger.info('双击[%s]为[%s]的元素' % (fangfa, dingwei))
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
+        e1 = self.element_wait(fangfa, dingwei)
         ActionChains(self.driver).double_click(e1).perform()
 
     def drag_and_drop(self, fangfa1, e1, fangfa2, e2):  # 从e1到e2
-        self.element_wait(fangfa1, e1)
-        eme1 = self.element(fangfa1, e1)
-        self.element_wait(fangfa2, e2)
-        eme2 = self.element(fangfa2, e2)
+        eme1 = self.element_wait(fangfa1, e1)
+        eme2 = self.element_wait(fangfa2, e2)
         ActionChains(self.driver).drag_and_drop(eme1, eme2).perform()
 
-    def click_text(self, text):  # 点击文字
+    def click_text(self, text):  # 点击超链接
         self.logs.logger.info("点击a标签：[%s]" % text)
-        self.driver.find_element_by_link_text(text).click()
+        e1 = self.element_wait('link_text', text)
+        e1.click()
 
     def close(self):  # 关闭
         self.logs.logger.info('关闭浏览器当前窗口')
@@ -161,8 +194,7 @@ class CreateDriver():
         self.driver.quit()
 
     def sublimit(self, fangfa, dingwei):  # 提交
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
+        e1 = self.element_wait(fangfa, dingwei)
         e1.sublimit()
 
     def f5(self):  # 刷新
@@ -176,23 +208,34 @@ class CreateDriver():
     #     "document.getElementById('id').value='内容'"
 
     def get_attribute(self, fangfa, dingwei, attribute):
-        e1 = self.element(fangfa, dingwei)
+        e1 = self.element_wait(fangfa, dingwei)
         return e1.get_attribute(attribute)
 
     def get_text(self, fangfa, dingwei):  # 获取文本值
-        self.logs.logger.info('获取[%s]为[%s]元素的文本值' % (fangfa, dingwei))
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
-        return e1.text
+        try:
+            self.logs.logger.info('进入get_text()方法')
+            e1 = self.element_wait(fangfa, dingwei)
+            if e1.text == None or e1.text == '':  # 如果文本值为null，则等待3秒后重新获取
+                sleep(3)
+                e2 = self.element_wait(fangfa, dingwei)
+                self.logs.logger.info('-重试-获取[%s]为[%s]元素的文本值,return:[%s]' % (fangfa, dingwei, e2.text))
+                return e2.text
+            else: # 不为null 直接return
+                self.logs.logger.info('获取[%s]为[%s]元素的文本值,return:[%s]' % (fangfa, dingwei, e1.text))
+                return e1.text
+        except TimeoutException as e:
+            self.logs.logger.error('clear_send_key()方法执行失败，原因TimeoutException:%s' % e)
+        except Exception as e:
+            self.logs.logger.error('用例执行失败，原因：%s' % e)
 
     def get_is_dis(self, fangfa, dingwei):
-        self.element_wait(fangfa, dingwei)
-        e1 = self.element(fangfa, dingwei)
+        e1 = self.element_wait(fangfa, dingwei)
         return e1.is_displayed()
 
     def get_title(self, fangfa, dingwei):  # 获取title
-        self.logs.logger.info('获取[%s]为[%s]的title' % (fangfa, dingwei))
-        return self.driver.title
+        title = self.driver.title
+        self.logs.logger.info('获取[%s]为[%s]的title,return:[%s]' % (fangfa, dingwei, title))
+        return title
 
     def get_screen(self, file_path):  # 截屏
         self.driver.get_screenshot_as_file(file_path)
@@ -214,6 +257,5 @@ class CreateDriver():
 
     def switch_to_frame(self, fangfa, dingwei):  # 切换到iframe表单
         self.logs.logger.info('切换到iframe表单')
-        self.element_wait(fangfa, dingwei)
-        if1 = self.element(fangfa, dingwei)
+        if1 = self.element_wait(fangfa, dingwei)
         self.driver.switch_to.frame(if1)

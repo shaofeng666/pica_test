@@ -425,6 +425,7 @@ function hide_img(obj){
 <style type="text/css" media="screen">
 body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 80%; }
 table       { font-size: 100%; }
+pre{text-align:left;}
 
 /* -- heading ---------------------------------------------------------------------- */
 .heading {

@@ -2,7 +2,7 @@ import yaml
 from util import log
 from config import root_path
 from util.selse_feng import CreateDriver
-import time
+from  time import  sleep
 
 
 class Login_test:  # 登录模块封装
@@ -14,44 +14,41 @@ class Login_test:  # 登录模块封装
         self.data = yaml.load(self.file)
         self.file.close()
         self.host = self.data['basepage'].get('host')
-        self.home_uri = self.data['login'].get('URI')
-        self.ele_login_but = self.data['login'].get('ele_login_but')
-        self.ele_name = self.data['login'].get('ele_name')
-        self.ele_pwd = self.data['login'].get('ele_password')
-        self.ele_sub = self.data['login'].get('ele_sub')
-        self.ele_err_msg = self.data['login'].get('ele_err_msg')
-        self.ele_succeed_msg = self.data['login'].get('ele_succeed_msg')
+        login_data=self.data['login']
+        self.home_uri = login_data.get('URI')
+        self.ele_login_but = login_data.get('ele_login_but')
+        self.ele_name = login_data.get('ele_name')
+        self.ele_pwd = login_data.get('ele_password')
+        self.ele_sub = login_data.get('ele_sub')
+        self.ele_name_err_msg = login_data.get('ele_name_err_msg')
+        self.ele_pwd_err_msg = login_data.get('ele_pwd_err_msg')
+        self.ele_succend_but=login_data.get('ele_succend_but')
+        self.ele_succeed_msg = login_data.get('ele_succeed_msg')
 
     def login(self, name, password, expect):
         self.logs.logger.info('调用login()')
-        try:
-            self.logs = log.log_message("登陆页面对象")
-            self.driver.open(self.host + self.home_uri)
-            self.driver.click_text(self.ele_login_but)
-            # self.logs.logger.info('用户名:id为[%s]输入[%s]' % (self.ele_name, name))
-            self.driver.send_key('id', self.ele_name, name)
-            self.driver.send_key('id', self.ele_pwd, password)
-            self.driver.click('xpath', self.ele_sub)
-            time.sleep(5)
-            if expect == 'true':
-                self.login_su = self.driver.get_text('link_text', self.ele_succeed_msg)
-                self.logs.logger.info('调用login()结束；返回%s' % self.login_su)
-                return self.login_su
-            elif expect == 'false':
-                self.login_err = self.driver.get_text('xpath', self.ele_err_msg)
-                self.logs.logger.info('调用login()结束；返回%s'%self.login_err)
-                return self.login_err
-            else:
-                self.logs.logger.info('输入预期结果不在范围内！')
-
-        except Exception as e:
-            self.logs.logger.error('用例执行失败，原因：%s' % e)
-            # finally:
-            #     self.driver.quit()
+        self.logs = log.log_message("登陆页面对象")
+        self.driver.open(self.host + self.home_uri)
+        self.driver.make_maxwindow()
+        self.driver.click('xpath', self.ele_login_but)
+        self.driver.send_key('name', self.ele_name, name)
+        self.driver.send_key('xpath', self.ele_pwd, password)
+        self.driver.click('xpath', self.ele_sub)
+        if expect == 'name_err':
+            self.login_name_err_msg = self.driver.get_text('xpath', self.ele_name_err_msg)
+            self.logs.logger.info('调用login()结束；return:[%s]' % self.login_name_err_msg)
+            return self.login_name_err_msg
+        elif expect == 'pwd_err':
+            self.login_pwd_err_msg = self.driver.get_text('xpath', self.ele_pwd_err_msg)
+            self.logs.logger.info('调用login()结束；return:[%s]' % self.login_pwd_err_msg)
+            return self.login_pwd_err_msg
+        elif expect == 'succeed':
+            self.driver.move_element('id',self.ele_succend_but)
+            self.login_su_msg = self.driver.get_text('link_text', self.ele_succeed_msg)
+            self.logs.logger.info('调用login()结束；return:[%s]' % self.login_su_msg)
+            return self.login_su_msg
+        else:
+            self.logs.logger.info('输入预期结果不在范围内！')
 
 
-if __name__ == '__main__':
-    e = Login_test()
-    # result=e.login('15928394929', 'qweqqq','false')
-    result = e.login('u4272320562', '196847w', 'true')
-    print(result)
+

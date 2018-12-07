@@ -5,16 +5,17 @@
 """
 import xlrd
 from util import log
-from  config import root_path
+from config import root_path
 
 logs = log.log_message('获取数据')
 
 
-def huoqu_test(filepath, index):
+def huoqu_test(filepath, index, module):
     '''
     参考：https://www.2cto.com/kf/201805/745595.html
     :param filepath:  测试数据存放路径
     :param index:   Execl 里面sheet(工作表)的下标 从0开始
+    :param module: 指定sheet中用例模块
     :return:
     '''
     try:
@@ -24,17 +25,21 @@ def huoqu_test(filepath, index):
         listdata = []
         for i in range(1, nrows):
             dict_canshu = {}
-            dict_canshu['id'] = sheet.cell(i, 0).value  # 获取单元格内容
-            dict_canshu.update(eval(sheet.cell(i, 2).value))
-            dict_canshu.update(eval(sheet.cell(i, 3).value))
-            listdata.append(dict_canshu)
+            dict_canshu['module'] = sheet.cell(i, 0).value  # 获取每行第一列内容
+            if dict_canshu['module'] == module:  #
+                dict_canshu['id'] = sheet.cell(i, 1).value  # 获取每行第二列内容
+                dict_canshu.update(eval(sheet.cell(i, 2).value))
+                dict_canshu.update(eval(sheet.cell(i, 3).value))
+                listdata.append(dict_canshu)
+        print(listdata)
         logs.logger.info('获取%s内第%s个sheet(工作表)的测试数据' % (filepath, index))
-        logs.logger.info('测试数据listdata：%s'%listdata)
+        logs.logger.info('测试数据listdata：%s' % listdata)
         return listdata
     except Exception as e:
         logs.logger.error('获取测试用例数据失败，原因：%s' % e)
 
 
 if __name__ == '__main__':
-    file_path=root_path + '\\data\\case.xlsx'
-    huoqu_test(file_path, 1)
+    # 测试类
+    file_path = root_path + '\\data\\case.xlsx'
+    huoqu_test(file_path, 1, '登录')

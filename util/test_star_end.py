@@ -19,4 +19,3 @@ class TestStarEnd(unittest.TestCase):
     def tearDown(self):
         self.imgs.append(self.driver.add_img())
         self.driver.quit()
-        self.logs.logger.info('结束\n')
