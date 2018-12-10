@@ -14,7 +14,7 @@ class log_message():
         '''
         self.class_name = class_name
         day = time.strftime("%Y-%m-%d_%H", time.localtime(time.time()))
-        file_dir = root_path + '\\log_doc'
+        file_dir = root_path + '\\logs'
         file = os.path.join(file_dir, (day + '.log'))
         self.logger = logging.Logger(self.class_name)
         self.logger.setLevel(logging.INFO)
