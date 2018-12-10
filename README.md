@@ -23,9 +23,11 @@
 ###  config.py 配置文件
 ###   run.py  执行脚本。
 
->注意：如果ide导入模块失败，可以在命令行pip安装，命令如下
+>**环境部署** 
+- 在项目根目录下执行pip install -r requirements.txt  具体说明参考：https://www.jianshu.com/p/2cbc4fa7dbe3
+
+注意：如果ide导入模块失败，可以在命令行pip安装，命令如下
 - 升级pip:   python -m pip install --upgrade pip(提示Could not find a version that satisfies the requirement yaml (from versions: )
 No matching distribution found for yaml 时候使用)
-- 安装yaml:  pip install pyyaml
-- 安装xlrd:  pip install xlrd
-- 安装ddt:   pip install ddt
+
+
