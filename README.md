@@ -25,6 +25,7 @@
 
 >**环境部署** 
 - 在项目根目录下执行pip install -r requirements.txt  具体说明参考：https://www.jianshu.com/p/2cbc4fa7dbe3
+- ddt驱动如果需要读**自定义测试用例名称**的名字需要修改ddt.py (数据驱动源码) 参考：https://www.jianshu.com/p/d1d22e6a655d
 
 注意：如果ide导入模块失败，可以在命令行pip安装，命令如下
 - 升级pip:   python -m pip install --upgrade pip(提示Could not find a version that satisfies the requirement yaml (from versions: )
