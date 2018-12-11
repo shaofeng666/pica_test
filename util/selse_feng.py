@@ -220,7 +220,7 @@ class CreateDriver(object):
                 e2 = self.element_wait(fangfa, dingwei)
                 self.logs.logger.info('-重试-获取[%s]为[%s]元素的文本值,return:[%s]' % (fangfa, dingwei, e2.text))
                 return e2.text
-            else: # 不为null 直接return
+            else:  # 不为null 直接return
                 self.logs.logger.info('获取[%s]为[%s]元素的文本值,return:[%s]' % (fangfa, dingwei, e1.text))
                 return e1.text
         except TimeoutException as e:
@@ -259,3 +259,6 @@ class CreateDriver(object):
         self.logs.logger.info('切换到iframe表单')
         if1 = self.element_wait(fangfa, dingwei)
         self.driver.switch_to.frame(if1)
+
+    def selenium_driver(self):  # 返回selenium的driver，方便调用原有的方法。例如get_cookies
+        return self.driver
