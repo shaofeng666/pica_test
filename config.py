@@ -11,9 +11,9 @@ import  os
 # 参考：https://www.jianshu.com/p/921e0cea40e7
 # =============
 
-# broswer = 'Firefox'  # 测试所需要的浏览器
-broswer = 'Chrome'
-# broswer = 'ie'
+# brower = 'Firefox'  # 测试所需要的浏览器
+brower = 'Chrome'
+# brower = 'ie'
 
 # =============
 # 测试报告参数

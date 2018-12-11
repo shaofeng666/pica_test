@@ -7,10 +7,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 from util import log
 from config import root_path
 from time import sleep
+from config import brower
 
-
-class CreateDriver():
-    def __init__(self, brower):  # 初始化浏览器
+class CreateDriver(object):
+    def __init__(self):  # 初始化浏览器
         if brower == 'firefox' or brower == 'Firefox' or brower == 'f' or brower == 'F':
             deriver = webdriver.Firefox(root_path + "\\browser_driver\\geckodriver.exe")
         elif brower == 'Ie' or brower == 'ie' or brower == 'i' or brower == 'I':
