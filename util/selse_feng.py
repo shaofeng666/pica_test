@@ -9,6 +9,7 @@ from config import root_path
 from time import sleep
 from config import brower
 
+
 class CreateDriver(object):
     def __init__(self):  # 初始化浏览器
         if brower == 'firefox' or brower == 'Firefox' or brower == 'f' or brower == 'F':
@@ -91,8 +92,9 @@ class CreateDriver(object):
                 "-element_wait()等待定位方式入参只包含：'id','name','class','link_text','xpath','css'.;请确认%s是否合法" % fangfa)
         return element
 
-    def open(self, url):  # 打开网页
+    def open(self, url):  # 打开网页并最大化浏览器
         self.logs.logger.info('打开网页[%s]' % url)
+        self.driver.maximize_window()
         self.driver.get(url)
 
     def make_maxwindow(self):  # 最大化浏览器
@@ -232,9 +234,9 @@ class CreateDriver(object):
         e1 = self.element_wait(fangfa, dingwei)
         return e1.is_displayed()
 
-    def get_title(self, fangfa, dingwei):  # 获取title
+    def get_title(self):  # 获取title
         title = self.driver.title
-        self.logs.logger.info('获取[%s]为[%s]的title,return:[%s]' % (fangfa, dingwei, title))
+        self.logs.logger.info('获取当前页面的title;return:[%s]')
         return title
 
     def get_screen(self, file_path):  # 截屏
