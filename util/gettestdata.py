@@ -4,13 +4,14 @@
 @time: 2018/1/19 11:43 
 """
 import xlrd
+import yaml
 from util import log
 from config import root_path
 
 logs = log.log_message('获取数据')
 
 
-def huoqu_test(filepath, index, module):
+def get_testcase(filepath, index, module):
     '''
     参考：https://www.2cto.com/kf/201805/745595.html
     :param filepath:  测试数据存放路径
@@ -39,7 +40,15 @@ def huoqu_test(filepath, index, module):
         logs.logger.error('获取测试用例数据失败，原因：%s' % e)
 
 
+def get_element(module):
+    file = open(root_path + "\\data\\page_data.yaml", "r", encoding="utf-8")
+    data = yaml.load(file)
+    file.close()
+    return data[ module ]
+
 if __name__ == '__main__':
     # 测试类
-    file_path = root_path + '\\data\\case.xlsx'
-    huoqu_test(file_path, 1, '登录')
+    # file_path = root_path + '\\data\\case.xlsx'
+    # huoqu_test(file_path, 1, '登录')
+
+    print(get_element('basepage').get('host'))# 测试获取元素

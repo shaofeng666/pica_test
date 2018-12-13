@@ -1,12 +1,12 @@
 import ddt
-from util.gettestdata import huoqu_test
+from util.gettestdata import get_testcase
 from config import root_path
 from util.test_star_end import TestStarEnd
 from bussinses.login_obj import Login_test
 from util import log
 
 case_path = root_path + '\\data\\case.xlsx'
-casedata = huoqu_test(case_path, 1, '登录')
+casedata = get_testcase(case_path, 1, '登录')
 
 
 @ddt.ddt
