@@ -226,7 +226,7 @@ class CreateDriver(object):
                 self.logs.logger.info('获取[%s]为[%s]元素的文本值,return:[%s]' % (fangfa, dingwei, e1.text))
                 return e1.text
         except TimeoutException as e:
-            self.logs.logger.error('clear_send_key()方法执行失败，原因TimeoutException:%s' % e)
+            self.logs.logger.error('get_text()方法执行失败，原因:TimeoutException:%s' % e)
         except Exception as e:
             self.logs.logger.error('用例执行失败，原因：%s' % e)
 
