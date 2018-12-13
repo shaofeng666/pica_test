@@ -1,8 +1,7 @@
 import yaml
 from util import log
 from config import root_path
-from util.selse_feng import CreateDriver
-from  time import  sleep
+from util.gettestdata import get_element
 
 
 class Login_test:  # 登录模块封装
@@ -10,11 +9,8 @@ class Login_test:  # 登录模块封装
         # self.driver = CreateDriver("Chrome")
         self.driver = driver
         self.logs = log.log_message('登陆页面对象')
-        self.file = open(root_path + "\\data\\page_data.yaml", "r", encoding="utf-8")
-        self.data = yaml.load(self.file)
-        self.file.close()
-        self.host = self.data['basepage'].get('host')
-        login_data=self.data['login']
+        self.host = get_element('basepage').get('host')
+        login_data=get_element('login')
         self.home_uri = login_data.get('URI')
         self.ele_login_but = login_data.get('ele_login_but')
         self.ele_name = login_data.get('ele_name')
