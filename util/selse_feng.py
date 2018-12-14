@@ -11,7 +11,7 @@ from config import brower
 
 
 class CreateDriver(object):
-    def __init__(self):  # 初始化浏览器
+    def __init__(self,imgs):  # 初始化浏览器
         if brower == 'firefox' or brower == 'Firefox' or brower == 'f' or brower == 'F':
             deriver = webdriver.Firefox(root_path + "\\browser_driver\\geckodriver.exe")
         elif brower == 'Ie' or brower == 'ie' or brower == 'i' or brower == 'I':
@@ -28,6 +28,7 @@ class CreateDriver(object):
             deriver = webdriver.Safari()
         else:
             raise NameError("-CreateDriver()对象只能传入：firefox,Ie,Chrome,PhantomJS,Edge,Opera,Safari;请确认%s是否合法" % brower)
+        self.imgs=imgs
         self.driver = deriver
         self.logs = log.log_message("页面对象")
 
@@ -110,6 +111,8 @@ class CreateDriver(object):
             e1 = self.element_wait(fangfa, dingwei)
             e1.click()
             e1.send_keys(text)
+            self.imgs.append(self.driver.get_screenshot_as_base64())
+            self.logs.logger.info('获取当前窗口的截图保存为一个base64编码的字符串。')
             self.logs.logger.info('在[%s]为[%s]的元素内输入[%s]' % (fangfa, dingwei, text))
         except TimeoutException as e:
             self.logs.logger.error('send_key()方法执行失败，原因TimeoutException:%s' % e)
@@ -123,6 +126,8 @@ class CreateDriver(object):
             e1.clear()
             e1.send_keys(text)
             self.logs.logger.info('点击[%s]为[%s]的元素清空内容，并输入[%s]' % (fangfa, dingwei, text))
+            self.imgs.append(self.driver.get_screenshot_as_base64())
+            self.logs.logger.info('获取当前窗口的截图保存为一个base64编码的字符串。')
         except TimeoutException as e:
             self.logs.logger.error('clear_send_key()方法执行失败，原因TimeoutException:%s' % e)
         except Exception as e:
@@ -192,7 +197,7 @@ class CreateDriver(object):
         self.driver.close()
 
     def quit(self):  # 退出
-        self.logs.logger.info('关闭浏览器')
+        self.logs.logger.info('关闭浏览器\n')
         self.driver.quit()
 
     def sublimit(self, fangfa, dingwei):  # 提交
@@ -215,15 +220,18 @@ class CreateDriver(object):
 
     def get_text(self, fangfa, dingwei):  # 获取文本值
         try:
-            self.logs.logger.info('进入get_text()方法')
             e1 = self.element_wait(fangfa, dingwei)
             if e1.text == None or e1.text == '':  # 如果文本值为null，则等待3秒后重新获取
                 sleep(3)
                 e2 = self.element_wait(fangfa, dingwei)
                 self.logs.logger.info('-重试-获取[%s]为[%s]元素的文本值,return:[%s]' % (fangfa, dingwei, e2.text))
+                self.imgs.append(self.driver.get_screenshot_as_base64())
+                self.logs.logger.info('获取当前窗口的截图保存为一个base64编码的字符串。')
                 return e2.text
             else:  # 不为null 直接return
                 self.logs.logger.info('获取[%s]为[%s]元素的文本值,return:[%s]' % (fangfa, dingwei, e1.text))
+                self.imgs.append(self.driver.get_screenshot_as_base64())
+                self.logs.logger.info('获取当前窗口的截图保存为一个base64编码的字符串。')
                 return e1.text
         except TimeoutException as e:
             self.logs.logger.error('get_text()方法执行失败，原因:TimeoutException:%s' % e)
