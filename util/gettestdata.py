@@ -1,7 +1,6 @@
 """ 
-@author: lileilei
-@file: ddd.py 
-@time: 2018/1/19 11:43 
+@author: Victor
+@time: 2018/8/19 11:43 
 """
 import xlrd
 import yaml
@@ -32,8 +31,7 @@ def get_testcase(filepath, index, module):
                 dict_canshu.update(eval(sheet.cell(i, 2).value))
                 dict_canshu.update(eval(sheet.cell(i, 3).value))
                 listdata.append(dict_canshu)
-        print(listdata)
-        logs.logger.info('获取%s内第%s个sheet(工作表)的测试数据' % (filepath, index))
+        logs.logger.info('获取%s内第%s个sheet(工作表)用例模块为"%s"的测试数据' % (filepath, index,module))
         logs.logger.info('测试数据listdata：%s' % listdata)
         return listdata
     except Exception as e:
