@@ -6,7 +6,7 @@ from util import log
 from util.gettestdata import get_element
 
 
-def Storage_login(driver):
+def storage_login(driver):
     '''
     通过localStorage 绕过登陆
     参考：# 通过cookie判断是否登陆:https://www.cnblogs.com/mengyu/p/7078561.html
@@ -34,14 +34,15 @@ def Storage_login(driver):
         driver.f5()
         driver.move_element('id', ele_succend_but)
         login_su_msg = driver.get_text('link_text', ele_succeed_msg)
-        assert login_su_msg == '个人资料s',  '[%s]不等于[个人资料]'%login_su_msg
+        assert login_su_msg == '个人资料',  '[%s]不等于[个人资料]'%login_su_msg
     except AssertionError as e:  # 明确抛出此异常
         print('登陆失败：[assert except]:%s ' % e)
 
 
 if __name__ == '__main__':
     # 验证是否登陆成功
-    driver = CreateDriver()
-    Storage_login(driver)
+    imgs=[]
+    driver = CreateDriver(imgs)
+    storage_login(driver)
     driver.click_text('健康管理')
     driver.quit()
