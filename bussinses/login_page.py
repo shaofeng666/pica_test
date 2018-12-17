@@ -1,6 +1,4 @@
-import yaml
 from util import log
-from config import root_path
 from util.gettestdata import get_element
 
 
