@@ -1,4 +1,3 @@
-import os
 import time
 import unittest
 
@@ -34,10 +33,11 @@ def create_report(is_new):
     elif is_new == 'n':
         report_dir = root_path + '\\report\\HTMLtemplate.html'
     else:
-        print('生成报个格式不对，只能输入【y】或【n】')
+        raise NameError('输入内容不在范围内;只能选择：n、y')
     re_open = open(report_dir, 'wb')
     runner = HTMLTestRunner(stream=re_open, title=reporttitle, description=description)
     runner.run(test_suit)
+    re_open.close()
 
 def run_case():
     '''
