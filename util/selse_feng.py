@@ -72,26 +72,51 @@ class CreateDriver(object):
                 "-elements()组定位方式只包含:'id','name','class','link_text','xpath','css','tag';请确认%s是否合法" % fangfa)
         return element
 
-    def element_wait(self, fangfa, dingwei, wati=15):  # 等待
-        if fangfa == "id":
-            element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.ID, dingwei)))
-        elif fangfa == "name":
-            element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.NAME, dingwei)))
-        elif fangfa == "class":
-            element = WebDriverWait(self.driver, wati, 1).until(
-                EC.presence_of_element_located((By.CLASS_NAME, dingwei)))
-        elif fangfa == "link_text" or fangfa == "a" or fangfa == "A":
-            element = WebDriverWait(self.driver, wati, 1).until(
-                EC.presence_of_element_located((By.LINK_TEXT, dingwei)))
-        elif fangfa == "xpath":
-            element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.XPATH, dingwei)))
-        elif fangfa == "css":
-            element = WebDriverWait(self.driver, wati, 1).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, dingwei)))
-        else:
-            raise NameError(
-                "-element_wait()等待定位方式入参只包含：'id','name','class','link_text','xpath','css'.;请确认%s是否合法" % fangfa)
-        return element
+    def element_wait(self, fangfa, dingwei, wati=3):  # 等待
+        try:
+            if fangfa == "id":
+                element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.ID, dingwei)))
+            elif fangfa == "name":
+                element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.NAME, dingwei)))
+            elif fangfa == "class":
+                element = WebDriverWait(self.driver, wati, 1).until(
+                    EC.presence_of_element_located((By.CLASS_NAME, dingwei)))
+            elif fangfa == "link_text" or fangfa == "a" or fangfa == "A":
+                element = WebDriverWait(self.driver, wati, 1).until(
+                    EC.presence_of_element_located((By.LINK_TEXT, dingwei)))
+            elif fangfa == "xpath":
+                element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.XPATH, dingwei)))
+            elif fangfa == "css":
+                element = WebDriverWait(self.driver, wati, 1).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, dingwei)))
+            else:
+                raise NameError(
+                    "-element_wait()等待定位方式入参只包含：'id','name','class','link_text','xpath','css'.;请确认%s是否合法" % fangfa)
+            return element
+        except TimeoutException as e:
+            sleep(1)  # 等待1秒后重试
+            if fangfa == "id":
+                element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.ID, dingwei)))
+            elif fangfa == "name":
+                element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.NAME, dingwei)))
+            elif fangfa == "class":
+                element = WebDriverWait(self.driver, wati, 1).until(
+                    EC.presence_of_element_located((By.CLASS_NAME, dingwei)))
+            elif fangfa == "link_text" or fangfa == "a" or fangfa == "A":
+                element = WebDriverWait(self.driver, wati, 1).until(
+                    EC.presence_of_element_located((By.LINK_TEXT, dingwei)))
+            elif fangfa == "xpath":
+                element = WebDriverWait(self.driver, wati, 1).until(EC.presence_of_element_located((By.XPATH, dingwei)))
+            elif fangfa == "css":
+                element = WebDriverWait(self.driver, wati, 1).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, dingwei)))
+            else:
+                raise NameError(
+                    "-element_wait()等待定位方式入参只包含：'id','name','class','link_text','xpath','css'.;请确认%s是否合法" % fangfa)
+            return element
+        except Exception as e:
+            self.logs.logger.error('element_wait()方法执行失败，原因：%s' % e)
+
 
     def open(self, url):  # 打开网页并最大化浏览器
         self.logs.logger.info('打开网页[%s]' % url)
@@ -160,22 +185,11 @@ class CreateDriver(object):
         ActionChains(self.driver).context_click(e1).perform()
 
     def move_element(self, fangfa, dingwei):  # 移动到
-        try:
-            sleep(2)
-            self.logs.logger.info('进入move_element()方法')
-            e1 = self.element_wait(fangfa, dingwei)
-            ActionChains(self.driver).move_to_element(e1).perform()
-            self.logs.logger.info('鼠标移动到[%s]为[%s]的元素' % (fangfa, dingwei))
-        except TimeoutException as e:
-            try:
-                sleep(3)
-                self.logs.logger.info('鼠标移动到[%s]为[%s]的元素' % (fangfa, dingwei))
-                e1 = self.element_wait(fangfa, dingwei)
-                ActionChains(self.driver).move_to_element(e1).perform()
-            except TimeoutException as e:
-                self.logs.logger.error('move_element()方法执行失败，原因TimeoutException:%s' % e)
-        except Exception as e:
-            self.logs.logger.error('用例执行失败，原因：%s' % e)
+        self.logs.logger.info('进入move_element()方法')
+        e1 = self.element_wait(fangfa, dingwei)
+        ActionChains(self.driver).move_to_element(e1).perform()
+        self.logs.logger.info('鼠标移动到[%s]为[%s]的元素' % (fangfa, dingwei))
+
 
     def double_click(self, dingwei, fangfa):  # 双击
         self.logs.logger.info('双击[%s]为[%s]的元素' % (fangfa, dingwei))
@@ -209,10 +223,9 @@ class CreateDriver(object):
         self.driver.refresh()
 
     def js(self, sprit):  # 执行js
+        sleep(2)
         self.logs.logger.info('执行js%s' % sprit)
         self.driver.execute_script(sprit)
-
-    #     "document.getElementById('id').value='内容'"
 
     def get_attribute(self, fangfa, dingwei, attribute):
         e1 = self.element_wait(fangfa, dingwei)
