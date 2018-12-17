@@ -1,3 +1,4 @@
+# yaml 语言教程参考：http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt
 basepage:
     host: "https://www.yunqueyi.com"
 login:
@@ -10,50 +11,19 @@ login:
     ele_pwd_err_msg: '//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/span[4]' # xpah
     ele_succend_but: 'personalImgUrl' # id
     ele_succeed_msg: "个人资料" # a
-zhuce:
-    url: "http://127.0.0.1:8000/"
-    zhuc: "注册"
-    username: "username"  #class
-    password: "password" #class
-    querenpass: "password1" #class
-    shouji: "shouji" #class
-    youxiang: "email" #class
-    tijiao_btn: "submit" #class
-    zhuce_err: "/html/body/form/div[6]/div/h4" #xpath
-    zhuce_suc: "denglu" #id
-zhaohui:
-    url: "http://127.0.0.1:8000/reset_pwd"
-    username: 'input[name=\"firstname\"]'
-    email: 'input[name=\"email\"]'
-    zhaohui_btn: 'input[type=\"submit\"]'
-    zhaohui_err: "/html/body/form/div[3]/div/h4" #xpath
-    zhaohui_suc: 'input[type=\"submit\"]' #css
-reset_pwd:
-    url: "http://127.0.0.1:8000/ret_passord"
-    email: 'input[name=\"email\"]'
-    yanzheng: 'input[name=\"yanzhengma\"]'
-    mima: 'input[name=\"inputPassword\"]'
-    chongzhimima: 'input[name=\"inputPassword1\"]'
-    reset_btn: 'input[type=\"submit\"]'
-    reset_error: "/html/body/form/div[5]/div/h4"
-    reset_suc: "denglu" #id
-xiugai:
-    url: "http://127.0.0.1:8000/xiugaimima"
-    yuanmi: 'input[type=\"pass_yuan\"]'
-    xiugaimi: 'input[type=\"inputPassword\"]'
-    xiugaimi1: 'input[type=\"inputPassword1\"]'
-    xiugai_but: "修改密码"
-    xiu_err: "/html/body/form/div[4]/div/h4"
-    xiu_suc: "denglu"#id
-xiebo:
-    url: "http://127.0.0.1:8000/xiebo"
-    biaoti: 'input[type=\"biaoti1\"]'
-    neirong: "comment_textarea"#classname
-    fenlei: "jumpMenu" #id
-    fenlei1: "/html/body/div/div/div[1]/div/div[2]/form/div[4]/select/option[2]" #git xpath
-    biaoqian: "biaoqian" #id
-    bianqian1: 'input[value=\"python\"]'
-    tuijian: 'input[name=\"tuijian\"]'
-    xiebo_btn: 'input[type=\"submit\"]'
-    xiebo_err: "/html/body/div/div/div[1]/div/div[2]/form/h4"
-    xiebo_suc: "/html/body/div/div/div[1]/div/div[3]/h4"
+patient:
+    patient_menu: '健康管理' #a
+    add_patient:
+        add_but: '/html/body/div[1]/div/div[2]/div/div/div[2]/div[1]/button[1]' # xpath
+        mobile: '/html/body/div[5]/div[1]/div/div[2]/form/div[1]/div[1]/input'# xpath
+        name: '/html/body/div[5]/div[1]/div/div[2]/form/div[3]/div[1]/input'# xpath
+        btn_confirm: '/html/body/div[5]/div[1]/div/div[3]/button[2]'
+        btn_cancel: '/html/body/div[5]/div[1]/div/div[3]/button[1]'
+        succeed_msg: '//*[@id="model-modify"]/div/div/div[2]/div/p' # xpath 添加成功
+        colse: '//*[@id="model-modify"]/div/div/div[1]/button'
+    del_patient:
+        seek_patient: '//*[@id="patient-container-body"]/div[1]/div[2]/input'
+        seek_btn : '//*[@id="patient-container-body"]/div[1]/div[2]/a'
+        batch_del: '//*[@id="patient-container-body"]/div[4]/div[1]/div/button[4]'
+        btn_confirm: '/html/body/div[5]/div/div/div[3]/button[2]'
+        btn_cancel: '/html/body/div[5]/div/div/div[3]/button[1]'
