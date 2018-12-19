@@ -1,11 +1,10 @@
 import time
 import unittest
-
 from config import description, reporttitle
 from util.modules.HTMLTestRunner_cn import HTMLTestRunner
 from config import root_path
 
-discover=[]
+
 def create_report(is_new):
     '''
     运行所有*_test.py文件中的test,生成报告
@@ -13,12 +12,11 @@ def create_report(is_new):
     :return: 根据规则生成测试报告文件名，相对路径
     '''
     test_suit = unittest.TestSuite()
-    # 运行\\case 目录下所有*test.py中test_* 方法
+    # 运行\\case 目录下所有test_*.py中test_* 方法
     discover = unittest.defaultTestLoader.discover(root_path + '\\case', pattern='test*.py', top_level_dir=None)
     for test in discover:
         for test_case in test:
             test_suit.addTest(test_case)
-
 
     now = time.strftime('%Y-%m-%d_%H_%M', time.localtime(time.time()))
     # 如果是 y 报告名称插入时间，每次新增；如果是 n 每次生成的报告名称相同,会覆盖前一个报告
@@ -33,9 +31,10 @@ def create_report(is_new):
     runner.run(test_suit)
     re_open.close()
 
+
 def run_case():
     '''
-    运行所有*_test.py文件中的test,不生成报告（结果输出控制台）
+    运行\\case 目录下所有test_*.py中test_* 方法,不生成报告（结果输出控制台）
     :return:
     '''
     test_suit = unittest.TestSuite()
