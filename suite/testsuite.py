@@ -5,7 +5,7 @@ from config import description, reporttitle
 from util.modules.HTMLTestRunner_cn import HTMLTestRunner
 from config import root_path
 
-
+discover=[]
 def create_report(is_new):
     '''
     运行所有*_test.py文件中的test,生成报告
@@ -19,12 +19,6 @@ def create_report(is_new):
         for test_case in test:
             test_suit.addTest(test_case)
 
-    # # # 运行\\case\\manage_patient_test目录下所有*test.py中test_* 方法
-    # patient_test_path=root_path + '\\case\\manage_patient'
-    # patient_test = unittest.defaultTestLoader.discover(patient_test_path, pattern='test*.py', top_level_dir=None)
-    # for test in patient_test:
-    #     for test_case in test:
-    #         test_suit.addTest(test_case)
 
     now = time.strftime('%Y-%m-%d_%H_%M', time.localtime(time.time()))
     # 如果是 y 报告名称插入时间，每次新增；如果是 n 每次生成的报告名称相同,会覆盖前一个报告
