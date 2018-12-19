@@ -17,7 +17,8 @@ def run_this_case(is_new,test_class):
     '''
     test_suit = unittest.TestSuite()
     # 运行指定模块下方法
-    test_suit.addTest(unittest.makeSuite(test_class))
+    for case in test_class:
+        test_suit.addTest(unittest.makeSuite(case))
 
     now = time.strftime('%Y-%m-%d_%H_%M', time.localtime(time.time()))
     # 如果是 y 报告名称插入时间，每次新增；如果是 n 每次生成的报告名称相同,会覆盖前一个报告
