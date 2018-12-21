@@ -32,16 +32,15 @@ def create_report(is_new):
     re_open.close()
 
 
-def run_case():
+def run_case(test_class):
     '''
     运行\\case 目录下所有test_*.py中test_* 方法,不生成报告（结果输出控制台）
     :return:
     '''
     test_suit = unittest.TestSuite()
-    discover = unittest.defaultTestLoader.discover(root_path + '\\case', pattern='test*.py', top_level_dir=None)
-    for test in discover:
-        for test_case in test:
-            test_suit.addTest(test_case)
+    # 运行指定模块下方法
+    for case in test_class:
+        test_suit.addTest(unittest.makeSuite(case))
 
     runner = unittest.TextTestRunner()
     runner.run(test_suit)
