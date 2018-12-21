@@ -31,7 +31,7 @@ class del_patient_obj():
         driver.js("document.getElementsByClassName('svg-icon ng-scope')[1].click()")
         driver.js('window.scrollTo(100,500)')
         driver.click('xpath',self.ele_batch_del)
-        if is_confirm=='确认':
+        if is_confirm=='确定':
             confirm_msg=driver.get_text('xpath',self.ele_confirm)
             driver.click('xpath', self.ele_confirm)
             sleep(0.5)

@@ -21,6 +21,9 @@ patient:
         btn_cancel: '/html/body/div[5]/div[1]/div/div[3]/button[1]'
         succeed_msg: '//*[@id="model-modify"]/div/div/div[2]/div/p' # xpath 添加成功
         colse: '//*[@id="model-modify"]/div/div/div[1]/button'
+        continue_add : '//*[@id="model-modify"]/div/div/div[3]/button[1]'
+        add_info : 'clip-btn' # id
+        add_address: '/html/body/div[1]/div/div[2]/div/div[6]/form/div[9]/div[2]/input'
     del_patient:
         seek_patient: '//*[@id="patient-container-body"]/div[1]/div[2]/input'
         seek_btn : '//*[@id="patient-container-body"]/div[1]/div[2]/a'
