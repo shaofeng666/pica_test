@@ -15,6 +15,7 @@
  - testsuite.py 测试用例集
 
 ### util 公共模块
+ - modules 第三方模块(ddt.py、HTMLTestRunner_cn.py) 
  - gettestdata.py 获取测试数据模块
  - HTMLTestRunner_cn.py 美化后的报告模块（替代HTMLTestRunner）
  - log.py 日志模块
