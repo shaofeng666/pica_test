@@ -148,6 +148,7 @@ class CreateDriver(object):
         try:
             e1 = self.element_wait(fangfa, dingwei)
             e1.click()
+            sleep(1)
             e1.clear()
             e1.send_keys(text)
             self.logs.logger.info('点击[%s]为[%s]的元素清空内容，并输入[%s]' % (fangfa, dingwei, text))
@@ -177,7 +178,7 @@ class CreateDriver(object):
         except TimeoutException as e:
             self.logs.logger.error('click()方法执行失败，原因TimeoutException:%s' % e)
         except Exception as e:
-            self.logs.logger.error('用例执行失败，原因：%s' % e)
+            self.logs.logger.error('click()执行失败，原因：%s' % e)
 
     def right_click(self, fangfa, dingwei):  # 右击
         self.logs.logger.info('右键点击[%s]为[%s]的元素' % (fangfa, dingwei))
