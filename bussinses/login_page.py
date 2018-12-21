@@ -1,9 +1,11 @@
 from util import log
 from util.gettestdata import get_element
+from time import sleep
+from util.selse_feng import CreateDriver
 
 
 class Login_test:  # 登录模块封装
-    def __init__(self, driver):
+    def __init__(self, driver:CreateDriver):
         # self.driver = CreateDriver("Chrome")
         self.driver = driver
         self.logs = log.log_message('登陆页面对象')
@@ -27,6 +29,7 @@ class Login_test:  # 登录模块封装
         self.driver.click('xpath', self.ele_login_but)
         self.driver.send_key('name', self.ele_name, name)
         self.driver.send_key('xpath', self.ele_pwd, password)
+        sleep(1)
         self.driver.click('xpath', self.ele_sub)
         if expect == 'name_err':
             self.login_name_err_msg = self.driver.get_text('xpath', self.ele_name_err_msg)
@@ -37,6 +40,7 @@ class Login_test:  # 登录模块封装
             self.logs.logger.info('调用login()结束；return:[%s]' % self.login_pwd_err_msg)
             return self.login_pwd_err_msg
         elif expect == 'succeed':
+            sleep(2)
             self.driver.move_element('id',self.ele_succend_but)
             self.login_su_msg = self.driver.get_text('link_text', self.ele_succeed_msg)
             self.logs.logger.info('调用login()结束；return:[%s]' % self.login_su_msg)
