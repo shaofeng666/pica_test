@@ -1,0 +1,290 @@
+[2018-12-21 23:00:55,590] - gettestdata.py - 34 - 获取数据 - INFO - 获取D:\Documents\pica_test\data\case.xlsx内第2个sheet(工作表)用例模块为"添加病人"的测试数据
+[2018-12-21 23:00:55,600] - gettestdata.py - 35 - 获取数据 - INFO - 测试数据listdata：[{'moblie': '15607241351', 'is_confrim': '取消', 'assert': '', 'is_continue': '关闭浏览器', 'address': '', 'name': '吴', 'case_name': '添加病人-取消', 'module': '添加病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'assert': '', 'is_continue': '关闭浏览器', 'address': '', 'name': '绍', 'case_name': '添加病人-确认添加', 'module': '添加病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'assert': '关闭', 'is_continue': '关闭', 'address': '', 'name': '峰', 'case_name': '添加病人-确认添加-关闭(放弃完善资料）', 'module': '添加病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'assert': '关闭', 'is_continue': '继续添加居民', 'address': '', 'name': '测', 'case_name': '添加病人-确认添加-继续添加居民', 'module': '添加病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'assert': '关闭', 'is_continue': '继续完善资料', 'address': '所在地', 'name': '试', 'case_name': '添加病人-确认添加-继续完善资料', 'module': '添加病人'}]
+[2018-12-21 23:00:55,610] - gettestdata.py - 34 - 获取数据 - INFO - 获取D:\Documents\pica_test\data\case.xlsx内第2个sheet(工作表)用例模块为"删除病人"的测试数据
+[2018-12-21 23:00:55,610] - gettestdata.py - 35 - 获取数据 - INFO - 测试数据listdata：[{'moblie': '15607241351', 'is_confrim': '取消', 'case_name': '删除病人->取消', 'assert': '取消', 'module': '删除病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'case_name': '删除病人->确认', 'assert': '确定', 'module': '删除病人'}]
+[2018-12-21 23:00:55,620] - gettestdata.py - 34 - 获取数据 - INFO - 获取D:\Documents\pica_test\data\case.xlsx内第1个sheet(工作表)用例模块为"登录"的测试数据
+[2018-12-21 23:00:55,620] - gettestdata.py - 35 - 获取数据 - INFO - 测试数据listdata：[{'pwd': 'aaa111', 'assert': '个人资料', 'username': '15607241351', 'suc': 'succeed', 'case_name': 'login_ succeed', 'module': '登录'}, {'pwd': 'aaaa1111', 'assert': '请输入正确的手机号', 'username': 'u4272320562', 'suc': 'name_err', 'case_name': 'name_err', 'module': '登录'}, {'pwd': 'aaaa1111', 'assert': '请输入手机号', 'username': '', 'suc': 'name_err', 'case_name': 'name_null', 'module': '登录'}, {'pwd': 'liwanlei11', 'assert': '手机号或密码不正确！', 'username': '15607241351', 'suc': 'pwd_err', 'case_name': 'pwd_err', 'module': '登录'}, {'pwd': '', 'assert': '请输入密码', 'username': '15607241351', 'suc': 'pwd_err', 'case_name': 'pwd_null', 'module': '登录'}]
+[2018-12-21 23:00:55,630] - gettestdata.py - 34 - 获取数据 - INFO - 获取D:\Documents\pica_test\data\case.xlsx内第2个sheet(工作表)用例模块为"添加病人"的测试数据
+[2018-12-21 23:00:55,630] - gettestdata.py - 35 - 获取数据 - INFO - 测试数据listdata：[{'moblie': '15607241351', 'is_confrim': '取消', 'assert': '', 'is_continue': '关闭浏览器', 'address': '', 'name': '吴', 'case_name': '添加病人-取消', 'module': '添加病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'assert': '', 'is_continue': '关闭浏览器', 'address': '', 'name': '绍', 'case_name': '添加病人-确认添加', 'module': '添加病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'assert': '关闭', 'is_continue': '关闭', 'address': '', 'name': '峰', 'case_name': '添加病人-确认添加-关闭(放弃完善资料）', 'module': '添加病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'assert': '关闭', 'is_continue': '继续添加居民', 'address': '', 'name': '测', 'case_name': '添加病人-确认添加-继续添加居民', 'module': '添加病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'assert': '关闭', 'is_continue': '继续完善资料', 'address': '所在地', 'name': '试', 'case_name': '添加病人-确认添加-继续完善资料', 'module': '添加病人'}]
+[2018-12-21 23:00:55,640] - gettestdata.py - 34 - 获取数据 - INFO - 获取D:\Documents\pica_test\data\case.xlsx内第2个sheet(工作表)用例模块为"删除病人"的测试数据
+[2018-12-21 23:00:55,640] - gettestdata.py - 35 - 获取数据 - INFO - 测试数据listdata：[{'moblie': '15607241351', 'is_confrim': '取消', 'case_name': '删除病人->取消', 'assert': '取消', 'module': '删除病人'}, {'moblie': '15607241351', 'is_confrim': '确定', 'case_name': '删除病人->确认', 'assert': '确定', 'module': '删除病人'}]
+[2018-12-21 23:00:55,660] - gettestdata.py - 34 - 获取数据 - INFO - 获取D:\Documents\pica_test\data\case.xlsx内第1个sheet(工作表)用例模块为"登录"的测试数据
+[2018-12-21 23:00:55,660] - gettestdata.py - 35 - 获取数据 - INFO - 测试数据listdata：[{'pwd': 'aaa111', 'assert': '个人资料', 'username': '15607241351', 'suc': 'succeed', 'case_name': 'login_ succeed', 'module': '登录'}, {'pwd': 'aaaa1111', 'assert': '请输入正确的手机号', 'username': 'u4272320562', 'suc': 'name_err', 'case_name': 'name_err', 'module': '登录'}, {'pwd': 'aaaa1111', 'assert': '请输入手机号', 'username': '', 'suc': 'name_err', 'case_name': 'name_null', 'module': '登录'}, {'pwd': 'liwanlei11', 'assert': '手机号或密码不正确！', 'username': '15607241351', 'suc': 'pwd_err', 'case_name': 'pwd_err', 'module': '登录'}, {'pwd': '', 'assert': '请输入密码', 'username': '15607241351', 'suc': 'pwd_err', 'case_name': 'pwd_null', 'module': '登录'}]
+[2018-12-21 23:00:57,954] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:00:57,964] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com]
+[2018-12-21 23:01:02,588] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="login"]/li[1]/span]元素的文本值,return:[登录]
+[2018-12-21 23:01:02,965] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:05,904] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("token", "6144D412D2614D1E80BFB3B802126A00");
+[2018-12-21 23:01:07,905] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("user_name", "\u751f\u4ea7-\u5434\u7ecd\u5cf0");
+[2018-12-21 23:01:09,910] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("doctorId", 101305659);
+[2018-12-21 23:01:09,916] - storage_login.py - 31 - 登陆测试 - INFO - 页面未登陆;向localStorage中插入：token、user_name、doctorId
+[2018-12-21 23:01:09,916] - selse_feng.py - 223 - 页面对象 - INFO - 刷新
+[2018-12-21 23:01:10,378] - selse_feng.py - 189 - 页面对象 - INFO - 进入move_element()方法
+[2018-12-21 23:01:11,612] - selse_feng.py - 192 - 页面对象 - INFO - 鼠标移动到[id]为[personalImgUrl]的元素
+[2018-12-21 23:01:11,698] - selse_feng.py - 246 - 页面对象 - INFO - 获取[link_text]为[个人资料]元素的文本值,return:[个人资料]
+[2018-12-21 23:01:12,086] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:12,096] - selse_feng.py - 206 - 页面对象 - INFO - 点击a标签：[健康管理]
+[2018-12-21 23:01:15,191] - selse_feng.py - 228 - 页面对象 - INFO - 执行jsdocument.getElementsByClassName('btn btn-big')[0].click()
+[2018-12-21 23:01:17,577] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[1]/div[1]/input]的元素清空内容，并输入[15607241351]
+[2018-12-21 23:01:18,037] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:19,298] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[3]/div[1]/input]的元素清空内容，并输入[吴TbErl9BU]
+[2018-12-21 23:01:19,598] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:19,694] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[3]/button[1]]的元素
+[2018-12-21 23:01:21,700] - add_patient_page.py - 47 - 添加居民 - INFO - 取消
+[2018-12-21 23:01:21,700] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:01:25,318] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:01:25,328] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com]
+[2018-12-21 23:01:30,786] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="login"]/li[1]/span]元素的文本值,return:[登录]
+[2018-12-21 23:01:31,152] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:33,515] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("token", "181C3CB81B1143EB8A82BC0861851DE5");
+[2018-12-21 23:01:35,525] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("user_name", "\u751f\u4ea7-\u5434\u7ecd\u5cf0");
+[2018-12-21 23:01:37,526] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("doctorId", 101305659);
+[2018-12-21 23:01:37,526] - storage_login.py - 31 - 登陆测试 - INFO - 页面未登陆;向localStorage中插入：token、user_name、doctorId
+[2018-12-21 23:01:37,526] - selse_feng.py - 223 - 页面对象 - INFO - 刷新
+[2018-12-21 23:01:37,819] - selse_feng.py - 189 - 页面对象 - INFO - 进入move_element()方法
+[2018-12-21 23:01:38,876] - selse_feng.py - 192 - 页面对象 - INFO - 鼠标移动到[id]为[personalImgUrl]的元素
+[2018-12-21 23:01:38,935] - selse_feng.py - 246 - 页面对象 - INFO - 获取[link_text]为[个人资料]元素的文本值,return:[个人资料]
+[2018-12-21 23:01:39,340] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:39,370] - selse_feng.py - 206 - 页面对象 - INFO - 点击a标签：[健康管理]
+[2018-12-21 23:01:42,480] - selse_feng.py - 228 - 页面对象 - INFO - 执行jsdocument.getElementsByClassName('btn btn-big')[0].click()
+[2018-12-21 23:01:44,868] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[1]/div[1]/input]的元素清空内容，并输入[15607241351]
+[2018-12-21 23:01:45,191] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:46,391] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[3]/div[1]/input]的元素清空内容，并输入[绍GWIJks2T]
+[2018-12-21 23:01:46,702] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:46,798] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[3]/button[2]]的元素
+[2018-12-21 23:01:47,874] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="model-modify"]/div/div/div[2]/div/p]元素的文本值,return:[添加成功！]
+[2018-12-21 23:01:48,182] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:01:48,192] - add_patient_page.py - 52 - 添加居民 - INFO - ->确定：添加成功！
+[2018-12-21 23:01:48,192] - add_patient_page.py - 54 - 添加居民 - INFO - 添加居民成功；是否继续添加：关闭浏览器
+[2018-12-21 23:01:48,192] - add_patient_page.py - 56 - 添加居民 - INFO - 关闭浏览器
+[2018-12-21 23:01:48,192] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:01:52,048] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:01:52,048] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com]
+[2018-12-21 23:01:57,586] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="login"]/li[1]/span]元素的文本值,return:[登录]
+[2018-12-21 23:01:57,934] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:00,199] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("token", "7BF9C910C5674CC79F2C01943D355DF8");
+[2018-12-21 23:02:02,205] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("user_name", "\u751f\u4ea7-\u5434\u7ecd\u5cf0");
+[2018-12-21 23:02:04,209] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("doctorId", 101305659);
+[2018-12-21 23:02:04,209] - storage_login.py - 31 - 登陆测试 - INFO - 页面未登陆;向localStorage中插入：token、user_name、doctorId
+[2018-12-21 23:02:04,209] - selse_feng.py - 223 - 页面对象 - INFO - 刷新
+[2018-12-21 23:02:04,533] - selse_feng.py - 189 - 页面对象 - INFO - 进入move_element()方法
+[2018-12-21 23:02:05,596] - selse_feng.py - 192 - 页面对象 - INFO - 鼠标移动到[id]为[personalImgUrl]的元素
+[2018-12-21 23:02:05,668] - selse_feng.py - 246 - 页面对象 - INFO - 获取[link_text]为[个人资料]元素的文本值,return:[个人资料]
+[2018-12-21 23:02:06,033] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:06,043] - selse_feng.py - 206 - 页面对象 - INFO - 点击a标签：[健康管理]
+[2018-12-21 23:02:09,138] - selse_feng.py - 228 - 页面对象 - INFO - 执行jsdocument.getElementsByClassName('btn btn-big')[0].click()
+[2018-12-21 23:02:11,530] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[1]/div[1]/input]的元素清空内容，并输入[15607241351]
+[2018-12-21 23:02:11,857] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:13,051] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[3]/div[1]/input]的元素清空内容，并输入[峰mycYs8It]
+[2018-12-21 23:02:13,359] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:13,460] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[3]/button[2]]的元素
+[2018-12-21 23:02:14,528] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="model-modify"]/div/div/div[2]/div/p]元素的文本值,return:[添加成功！]
+[2018-12-21 23:02:14,830] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:14,840] - add_patient_page.py - 52 - 添加居民 - INFO - ->确定：添加成功！
+[2018-12-21 23:02:14,840] - add_patient_page.py - 54 - 添加居民 - INFO - 添加居民成功；是否继续添加：关闭
+[2018-12-21 23:02:15,094] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="model-modify"]/div/div/div[1]/button]的元素
+[2018-12-21 23:02:15,095] - add_patient_page.py - 59 - 添加居民 - INFO - 关闭弹层
+[2018-12-21 23:02:15,095] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:02:18,776] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:02:18,776] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com]
+[2018-12-21 23:02:23,500] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="login"]/li[1]/span]元素的文本值,return:[登录]
+[2018-12-21 23:02:23,846] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:26,071] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("token", "536662279845416EA64A14E4052C45B8");
+[2018-12-21 23:02:28,071] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("user_name", "\u751f\u4ea7-\u5434\u7ecd\u5cf0");
+[2018-12-21 23:02:30,079] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("doctorId", 101305659);
+[2018-12-21 23:02:30,079] - storage_login.py - 31 - 登陆测试 - INFO - 页面未登陆;向localStorage中插入：token、user_name、doctorId
+[2018-12-21 23:02:30,079] - selse_feng.py - 223 - 页面对象 - INFO - 刷新
+[2018-12-21 23:02:30,453] - selse_feng.py - 189 - 页面对象 - INFO - 进入move_element()方法
+[2018-12-21 23:02:31,506] - selse_feng.py - 192 - 页面对象 - INFO - 鼠标移动到[id]为[personalImgUrl]的元素
+[2018-12-21 23:02:31,572] - selse_feng.py - 246 - 页面对象 - INFO - 获取[link_text]为[个人资料]元素的文本值,return:[个人资料]
+[2018-12-21 23:02:31,944] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:31,964] - selse_feng.py - 206 - 页面对象 - INFO - 点击a标签：[健康管理]
+[2018-12-21 23:02:35,053] - selse_feng.py - 228 - 页面对象 - INFO - 执行jsdocument.getElementsByClassName('btn btn-big')[0].click()
+[2018-12-21 23:02:37,443] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[1]/div[1]/input]的元素清空内容，并输入[15607241351]
+[2018-12-21 23:02:37,785] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:38,990] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[3]/div[1]/input]的元素清空内容，并输入[测RAgWen7c]
+[2018-12-21 23:02:39,289] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:39,387] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[3]/button[2]]的元素
+[2018-12-21 23:02:40,508] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="model-modify"]/div/div/div[2]/div/p]元素的文本值,return:[添加成功！]
+[2018-12-21 23:02:40,856] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:40,866] - add_patient_page.py - 52 - 添加居民 - INFO - ->确定：添加成功！
+[2018-12-21 23:02:40,866] - add_patient_page.py - 54 - 添加居民 - INFO - 添加居民成功；是否继续添加：继续添加居民
+[2018-12-21 23:02:40,866] - add_patient_page.py - 61 - 添加居民 - INFO - 继续添加居民
+[2018-12-21 23:02:41,007] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="model-modify"]/div/div/div[3]/button[1]]的元素
+[2018-12-21 23:02:43,360] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[1]/div[1]/input]的元素清空内容，并输入[15607241351]
+[2018-12-21 23:02:43,719] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:44,911] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[3]/div[1]/input]的元素清空内容，并输入[RAgWen7c]
+[2018-12-21 23:02:45,231] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:45,320] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[3]/button[2]]的元素
+[2018-12-21 23:02:48,442] - selse_feng.py - 241 - 页面对象 - INFO - -重试-获取[xpath]为[//*[@id="model-modify"]/div/div/div[2]/div/p]元素的文本值,return:[添加成功！]
+[2018-12-21 23:02:48,767] - selse_feng.py - 243 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:02:48,767] - add_patient_page.py - 68 - 添加居民 - INFO - ->确定：添加成功！
+[2018-12-21 23:02:48,777] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:02:52,515] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:02:52,535] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com]
+[2018-12-21 23:02:57,609] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="login"]/li[1]/span]元素的文本值,return:[登录]
+[2018-12-21 23:02:57,998] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:00,291] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("token", "9D7CF4F198D449C3884DEE81936AA19D");
+[2018-12-21 23:03:02,305] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("user_name", "\u751f\u4ea7-\u5434\u7ecd\u5cf0");
+[2018-12-21 23:03:04,321] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("doctorId", 101305659);
+[2018-12-21 23:03:04,321] - storage_login.py - 31 - 登陆测试 - INFO - 页面未登陆;向localStorage中插入：token、user_name、doctorId
+[2018-12-21 23:03:04,321] - selse_feng.py - 223 - 页面对象 - INFO - 刷新
+[2018-12-21 23:03:04,729] - selse_feng.py - 189 - 页面对象 - INFO - 进入move_element()方法
+[2018-12-21 23:03:05,840] - selse_feng.py - 192 - 页面对象 - INFO - 鼠标移动到[id]为[personalImgUrl]的元素
+[2018-12-21 23:03:05,903] - selse_feng.py - 246 - 页面对象 - INFO - 获取[link_text]为[个人资料]元素的文本值,return:[个人资料]
+[2018-12-21 23:03:06,272] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:06,282] - selse_feng.py - 206 - 页面对象 - INFO - 点击a标签：[健康管理]
+[2018-12-21 23:03:09,401] - selse_feng.py - 228 - 页面对象 - INFO - 执行jsdocument.getElementsByClassName('btn btn-big')[0].click()
+[2018-12-21 23:03:11,872] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[1]/div[1]/input]的元素清空内容，并输入[15607241351]
+[2018-12-21 23:03:12,228] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:13,494] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[2]/form/div[3]/div[1]/input]的元素清空内容，并输入[试Pix3yhOI]
+[2018-12-21 23:03:13,809] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:13,897] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div[1]/div/div[3]/button[2]]的元素
+[2018-12-21 23:03:14,967] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="model-modify"]/div/div/div[2]/div/p]元素的文本值,return:[添加成功！]
+[2018-12-21 23:03:15,317] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:15,327] - add_patient_page.py - 52 - 添加居民 - INFO - ->确定：添加成功！
+[2018-12-21 23:03:15,327] - add_patient_page.py - 54 - 添加居民 - INFO - 添加居民成功；是否继续添加：继续完善资料
+[2018-12-21 23:03:15,387] - selse_feng.py - 177 - 页面对象 - INFO - 点击[id]为[clip-btn]的元素
+[2018-12-21 23:03:17,387] - add_patient_page.py - 73 - 添加居民 - INFO - 继续完善资料
+[2018-12-21 23:03:17,388] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:03:20,999] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:03:21,009] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com]
+[2018-12-21 23:03:25,577] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="login"]/li[1]/span]元素的文本值,return:[登录]
+[2018-12-21 23:03:25,959] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:28,232] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("token", "7009E4404CC14B078D76F60255D2EBEB");
+[2018-12-21 23:03:30,246] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("user_name", "\u751f\u4ea7-\u5434\u7ecd\u5cf0");
+[2018-12-21 23:03:32,278] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("doctorId", 101305659);
+[2018-12-21 23:03:32,288] - storage_login.py - 31 - 登陆测试 - INFO - 页面未登陆;向localStorage中插入：token、user_name、doctorId
+[2018-12-21 23:03:32,288] - selse_feng.py - 223 - 页面对象 - INFO - 刷新
+[2018-12-21 23:03:32,602] - selse_feng.py - 189 - 页面对象 - INFO - 进入move_element()方法
+[2018-12-21 23:03:33,696] - selse_feng.py - 192 - 页面对象 - INFO - 鼠标移动到[id]为[personalImgUrl]的元素
+[2018-12-21 23:03:33,756] - selse_feng.py - 246 - 页面对象 - INFO - 获取[link_text]为[个人资料]元素的文本值,return:[个人资料]
+[2018-12-21 23:03:34,123] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:34,133] - selse_feng.py - 206 - 页面对象 - INFO - 点击a标签：[健康管理]
+[2018-12-21 23:03:37,633] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[//*[@id="patient-container-body"]/div[1]/div[2]/input]的元素清空内容，并输入[15607241351]
+[2018-12-21 23:03:37,949] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:38,041] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="patient-container-body"]/div[1]/div[2]/a]的元素
+[2018-12-21 23:03:40,041] - selse_feng.py - 228 - 页面对象 - INFO - 执行jsdocument.getElementsByClassName('svg-icon ng-scope')[1].click()
+[2018-12-21 23:03:42,096] - selse_feng.py - 228 - 页面对象 - INFO - 执行jswindow.scrollTo(100,500)
+[2018-12-21 23:03:42,206] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="patient-container-body"]/div[4]/div[1]/div/button[4]]的元素
+[2018-12-21 23:03:43,328] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[/html/body/div[5]/div/div/div[3]/button[1]]元素的文本值,return:[取消]
+[2018-12-21 23:03:43,672] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:43,733] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div/div/div[3]/button[1]]的元素
+[2018-12-21 23:03:44,234] - selse_feng.py - 268 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:44,574] - test_del_patient.py - 24 - 初始化 - INFO - 断言预期结果:[取消]是否等于实际结果:[取消]
+[2018-12-21 23:03:44,574] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:03:48,211] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:03:48,221] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com]
+[2018-12-21 23:03:52,964] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="login"]/li[1]/span]元素的文本值,return:[登录]
+[2018-12-21 23:03:53,287] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:03:55,843] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("token", "F21162CD72A740958D2D7CB00F7AF980");
+[2018-12-21 23:03:57,864] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("user_name", "\u751f\u4ea7-\u5434\u7ecd\u5cf0");
+[2018-12-21 23:03:59,880] - selse_feng.py - 228 - 页面对象 - INFO - 执行jslocalStorage.setItem("doctorId", 101305659);
+[2018-12-21 23:03:59,890] - storage_login.py - 31 - 登陆测试 - INFO - 页面未登陆;向localStorage中插入：token、user_name、doctorId
+[2018-12-21 23:03:59,890] - selse_feng.py - 223 - 页面对象 - INFO - 刷新
+[2018-12-21 23:04:00,226] - selse_feng.py - 189 - 页面对象 - INFO - 进入move_element()方法
+[2018-12-21 23:04:01,294] - selse_feng.py - 192 - 页面对象 - INFO - 鼠标移动到[id]为[personalImgUrl]的元素
+[2018-12-21 23:04:01,350] - selse_feng.py - 246 - 页面对象 - INFO - 获取[link_text]为[个人资料]元素的文本值,return:[个人资料]
+[2018-12-21 23:04:01,714] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:01,724] - selse_feng.py - 206 - 页面对象 - INFO - 点击a标签：[健康管理]
+[2018-12-21 23:04:05,258] - selse_feng.py - 154 - 页面对象 - INFO - 点击[xpath]为[//*[@id="patient-container-body"]/div[1]/div[2]/input]的元素清空内容，并输入[15607241351]
+[2018-12-21 23:04:05,593] - selse_feng.py - 156 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:05,677] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="patient-container-body"]/div[1]/div[2]/a]的元素
+[2018-12-21 23:04:07,678] - selse_feng.py - 228 - 页面对象 - INFO - 执行jsdocument.getElementsByClassName('svg-icon ng-scope')[1].click()
+[2018-12-21 23:04:09,716] - selse_feng.py - 228 - 页面对象 - INFO - 执行jswindow.scrollTo(100,500)
+[2018-12-21 23:04:09,829] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="patient-container-body"]/div[4]/div[1]/div/button[4]]的元素
+[2018-12-21 23:04:10,893] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[/html/body/div[5]/div/div/div[3]/button[2]]元素的文本值,return:[确定]
+[2018-12-21 23:04:11,232] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:11,292] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[/html/body/div[5]/div/div/div[3]/button[2]]的元素
+[2018-12-21 23:04:11,799] - selse_feng.py - 268 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:12,144] - test_del_patient.py - 24 - 初始化 - INFO - 断言预期结果:[确定]是否等于实际结果:[确定]
+[2018-12-21 23:04:12,144] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:04:15,828] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:04:15,848] - login_page.py - 25 - 登陆页面对象 - INFO - 调用login()
+[2018-12-21 23:04:15,848] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com/]
+[2018-12-21 23:04:21,223] - selse_feng.py - 127 - 页面对象 - INFO - 最大化浏览器
+[2018-12-21 23:04:21,303] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="login"]/li[1]/span]的元素
+[2018-12-21 23:04:22,924] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:22,924] - selse_feng.py - 141 - 页面对象 - INFO - 在[name]为[mobile]的元素内输入[15607241351]
+[2018-12-21 23:04:23,390] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:23,390] - selse_feng.py - 141 - 页面对象 - INFO - 在[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/input]的元素内输入[aaa111]
+[2018-12-21 23:04:24,505] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[7]/button[1]]的元素
+[2018-12-21 23:04:26,507] - selse_feng.py - 189 - 页面对象 - INFO - 进入move_element()方法
+[2018-12-21 23:04:26,584] - selse_feng.py - 192 - 页面对象 - INFO - 鼠标移动到[id]为[personalImgUrl]的元素
+[2018-12-21 23:04:26,654] - selse_feng.py - 246 - 页面对象 - INFO - 获取[link_text]为[个人资料]元素的文本值,return:[个人资料]
+[2018-12-21 23:04:27,032] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:27,042] - login_page.py - 46 - 登陆页面对象 - INFO - 调用login()结束；return:[个人资料]
+[2018-12-21 23:04:27,042] - test_login.py - 22 - 登陆测试 - INFO - 断言预期结果:[个人资料]是否等于实际结果:[个人资料]
+[2018-12-21 23:04:27,042] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:04:30,722] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:04:30,742] - login_page.py - 25 - 登陆页面对象 - INFO - 调用login()
+[2018-12-21 23:04:30,742] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com/]
+[2018-12-21 23:04:35,900] - selse_feng.py - 127 - 页面对象 - INFO - 最大化浏览器
+[2018-12-21 23:04:35,984] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="login"]/li[1]/span]的元素
+[2018-12-21 23:04:37,673] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:37,673] - selse_feng.py - 141 - 页面对象 - INFO - 在[name]为[mobile]的元素内输入[u4272320562]
+[2018-12-21 23:04:38,213] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:38,213] - selse_feng.py - 141 - 页面对象 - INFO - 在[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/input]的元素内输入[aaaa1111]
+[2018-12-21 23:04:39,317] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[7]/button[1]]的元素
+[2018-12-21 23:04:39,378] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[1]/span[2]]元素的文本值,return:[请输入正确的手机号]
+[2018-12-21 23:04:39,847] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:39,857] - login_page.py - 36 - 登陆页面对象 - INFO - 调用login()结束；return:[请输入正确的手机号]
+[2018-12-21 23:04:39,857] - test_login.py - 22 - 登陆测试 - INFO - 断言预期结果:[请输入正确的手机号]是否等于实际结果:[请输入正确的手机号]
+[2018-12-21 23:04:39,857] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:04:43,538] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:04:43,558] - login_page.py - 25 - 登陆页面对象 - INFO - 调用login()
+[2018-12-21 23:04:43,558] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com/]
+[2018-12-21 23:04:48,054] - selse_feng.py - 127 - 页面对象 - INFO - 最大化浏览器
+[2018-12-21 23:04:48,142] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="login"]/li[1]/span]的元素
+[2018-12-21 23:04:49,739] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:49,739] - selse_feng.py - 141 - 页面对象 - INFO - 在[name]为[mobile]的元素内输入[]
+[2018-12-21 23:04:50,261] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:50,261] - selse_feng.py - 141 - 页面对象 - INFO - 在[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/input]的元素内输入[aaaa1111]
+[2018-12-21 23:04:51,400] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[7]/button[1]]的元素
+[2018-12-21 23:04:51,458] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[1]/span[2]]元素的文本值,return:[请输入手机号]
+[2018-12-21 23:04:51,920] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:04:51,930] - login_page.py - 36 - 登陆页面对象 - INFO - 调用login()结束；return:[请输入手机号]
+[2018-12-21 23:04:51,930] - test_login.py - 22 - 登陆测试 - INFO - 断言预期结果:[请输入手机号]是否等于实际结果:[请输入手机号]
+[2018-12-21 23:04:51,930] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:04:55,537] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:04:55,547] - login_page.py - 25 - 登陆页面对象 - INFO - 调用login()
+[2018-12-21 23:04:55,547] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com/]
+[2018-12-21 23:05:00,224] - selse_feng.py - 127 - 页面对象 - INFO - 最大化浏览器
+[2018-12-21 23:05:00,322] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="login"]/li[1]/span]的元素
+[2018-12-21 23:05:01,983] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:05:01,983] - selse_feng.py - 141 - 页面对象 - INFO - 在[name]为[mobile]的元素内输入[15607241351]
+[2018-12-21 23:05:02,521] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:05:02,521] - selse_feng.py - 141 - 页面对象 - INFO - 在[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/input]的元素内输入[liwanlei11]
+[2018-12-21 23:05:03,720] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[7]/button[1]]的元素
+[2018-12-21 23:05:06,814] - selse_feng.py - 241 - 页面对象 - INFO - -重试-获取[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/span[4]]元素的文本值,return:[手机号或密码不正确！]
+[2018-12-21 23:05:07,207] - selse_feng.py - 243 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:05:07,217] - login_page.py - 40 - 登陆页面对象 - INFO - 调用login()结束；return:[手机号或密码不正确！]
+[2018-12-21 23:05:07,217] - test_login.py - 22 - 登陆测试 - INFO - 断言预期结果:[手机号或密码不正确！]是否等于实际结果:[手机号或密码不正确！]
+[2018-12-21 23:05:07,217] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+
+[2018-12-21 23:05:10,940] - test_star_end.py - 16 - 初始化 - INFO - 启动
+[2018-12-21 23:05:10,960] - login_page.py - 25 - 登陆页面对象 - INFO - 调用login()
+[2018-12-21 23:05:10,960] - selse_feng.py - 122 - 页面对象 - INFO - 打开网页[https://www.yunqueyi.com/]
+[2018-12-21 23:05:15,698] - selse_feng.py - 127 - 页面对象 - INFO - 最大化浏览器
+[2018-12-21 23:05:15,774] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="login"]/li[1]/span]的元素
+[2018-12-21 23:05:17,472] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:05:17,472] - selse_feng.py - 141 - 页面对象 - INFO - 在[name]为[mobile]的元素内输入[15607241351]
+[2018-12-21 23:05:17,923] - selse_feng.py - 140 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:05:17,923] - selse_feng.py - 141 - 页面对象 - INFO - 在[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/input]的元素内输入[]
+[2018-12-21 23:05:19,047] - selse_feng.py - 177 - 页面对象 - INFO - 点击[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[7]/button[1]]的元素
+[2018-12-21 23:05:19,107] - selse_feng.py - 246 - 页面对象 - INFO - 获取[xpath]为[//*[@id="ng-app"]/body/div[15]/div/div/div[4]/form/div[3]/span[4]]元素的文本值,return:[请输入密码]
+[2018-12-21 23:05:19,585] - selse_feng.py - 248 - 页面对象 - INFO - 获取当前窗口的截图保存为一个base64编码的字符串。
+[2018-12-21 23:05:19,595] - login_page.py - 40 - 登陆页面对象 - INFO - 调用login()结束；return:[请输入密码]
+[2018-12-21 23:05:19,595] - test_login.py - 22 - 登陆测试 - INFO - 断言预期结果:[请输入密码]是否等于实际结果:[请输入密码]
+[2018-12-21 23:05:19,595] - selse_feng.py - 215 - 页面对象 - INFO - 关闭浏览器
+

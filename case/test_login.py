@@ -24,7 +24,5 @@ class Testlogin(TestStarEnd):
         self.assertEqual(self.re_data, self.assert_value)
 
 
-if __name__ == '__main__':
-    Testlogin().test_login1()
-    print(casedata)
+
 
