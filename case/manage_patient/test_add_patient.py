@@ -11,31 +11,21 @@ from util.test_star_end import TestStarEnd
 from util import log
 
 case_path = root_path + '\\data\\case.xlsx'
-del_patient_data = get_testcase(case_path, 2, '删除病人')
 add_patient_data = get_testcase(case_path, 2, '添加病人')
 
 
 @ddt.ddt
 class add_patient(TestStarEnd):
-    def test_add_patient(self):  # 增加居民
+    @ddt.data(*add_patient_data)
+    def test_add_patient(self, add_patient_data):  # 增加居民
+        self.log = log.log_message('添加居民')
+        moblie = add_patient_data['moblie']
+        name = add_patient_data['name']
+        is_confrim = add_patient_data['is_confrim']
+        is_continue = add_patient_data['is_continue']
+        assert_value = add_patient_data['assert']
+        address = add_patient_data['address']
         storage_login(self.driver)
-        add_patient_obj(self.driver).add_patient('15607241351', '2222', '确认', '关闭')
-
-        # add_patient_obj(self.driver).add_patient('15607241351','2222','取消','')
-        # add_patient_obj(self.driver).add_patient('15607241351','2222','确认','')
-
-    @ddt.data(*del_patient_data)
-    def test_del_patient(self, del_patient_data):  # 删除居民
-        storage_login(self.driver)
-        moblie = del_patient_data['moblie']
-        is_confrim = del_patient_data['is_confrim']
-        assert_value = del_patient_data['assert']
-        print(moblie, is_confrim, assert_value)
-        re_data = del_patient_obj(self.driver).del_patient(moblie, is_confrim, self.imgs)
-        self.logs.logger.info('断言预期结果:[%s]是否等于实际结果:[%s]' % (assert_value, re_data))
-        self.assertEqual(re_data, assert_value)
-
-
-if __name__ == '__main__':
-    # add_patient().test_add_patient()
-    add_patient().test_del_patient()
+        re_data = add_patient_obj(self.driver, self.log).add_patient(moblie, name, is_confrim, is_continue, address)
+        # self.logs.logger.info('断言预期结果:[%s]是否等于实际结果:[%s]' % (assert_value, re_data))
+        # self.assertEqual(re_data, assert_value)
