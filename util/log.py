@@ -29,4 +29,4 @@ class log_message():
         self.logger.addHandler(self.logfile)
         self.logger.addHandler(self.control)
 
-# 使用方法参考：D:\testCase\Auto_test\util\gettestdata.py 内31 、35 行
+# 使用方法参考：..\util\gettestdata.py  搜索 'logs' 关键词
